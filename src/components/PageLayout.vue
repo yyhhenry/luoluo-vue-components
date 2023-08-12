@@ -23,11 +23,9 @@ const showAside = ref(true);
       <LRMenu>
         <ElSpace>
           <ElButton
-            circle
-            :type="'primary'"
-            plain
+            text
             :icon="MoreFilled"
-            v-if="xs"
+            v-if="xs && slots.aside"
             @click="showAside = true"
           ></ElButton>
           <slot name="header"></slot>
