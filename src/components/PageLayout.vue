@@ -48,7 +48,7 @@ const showAside = ref(true);
           append-to-body
           :direction="'ltr'"
           v-model="showAside"
-          v-else-if="slots.aside"
+          v-else
         >
           <slot name="aside"></slot>
         </ElDrawer>
