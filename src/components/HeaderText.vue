@@ -1,29 +1,18 @@
 <script setup lang="ts">
-import { ElLink } from 'element-plus';
+import { ElText } from 'element-plus';
 defineProps<{
   fontSize?: string;
   enableSelect?: boolean;
-  href?: string;
 }>();
 </script>
 <template>
-  <ElLink
-    :underline="false"
-    class="header-text"
+  <ElText
+    tag="h1"
     :style="{
-      fontSize: fontSize ?? '1.5rem',
-      userSelect: enableSelect ? 'text' : 'none',
+      fontSize: fontSize ?? 'var(--el-font-size-extra-large)',
+      userSelect: enableSelect ? undefined : 'none',
     }"
-    :href="href"
-    :title="href"
   >
     <slot></slot>
-  </ElLink>
+  </ElText>
 </template>
-<style scoped>
-.header-text {
-  margin: 0 0.5rem;
-  font-weight: bold;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-</style>

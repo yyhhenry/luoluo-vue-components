@@ -10,8 +10,7 @@ import CenterLayout from './CenterLayout.vue';
 </template>
 <style scoped>
 .flex-box {
-  margin: 20px;
-  margin-bottom: 0px;
+  margin: 10px;
   width: min(100%, max(800px, 60%));
 }
 </style>
