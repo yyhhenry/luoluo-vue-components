@@ -5,16 +5,7 @@ import PageLayout from '@/components/PageLayout.vue';
 import SwitchDark from '@/components/SwitchDark.vue';
 import websiteName from '@/utils/website-name';
 import { useTitle } from '@vueuse/core';
-import {
-  ElCard,
-  ElDivider,
-  ElMenu,
-  ElMenuItem,
-  ElMenuItemGroup,
-  ElSpace,
-  ElSubMenu,
-  ElText,
-} from 'element-plus';
+import { ElMenu, ElMenuItem, ElSubMenu } from 'element-plus';
 useTitle(websiteName);
 </script>
 

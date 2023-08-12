@@ -42,7 +42,14 @@ const showAside = ref(true);
         <ElAside :width="asideWidth" class="aside" v-if="slots.aside && !xs">
           <slot name="aside"></slot>
         </ElAside>
-        <ElDrawer :with-header="false" :size="'60%'" append-to-body :direction="'ltr'" v-model="showAside" v-else>
+        <ElDrawer
+          :with-header="false"
+          :size="'60%'"
+          append-to-body
+          :direction="'ltr'"
+          v-model="showAside"
+          v-else
+        >
           <slot name="aside"></slot>
         </ElDrawer>
         <ElMain :style="{ padding: '0px' }">

@@ -6,7 +6,8 @@ defineProps<{
 }>();
 </script>
 <template>
-  <ElText tag="h1"
+  <ElText
+    tag="h1"
     :style="{
       fontSize: fontSize ?? 'var(--el-font-size-extra-large)',
       userSelect: enableSelect ? undefined : 'none',

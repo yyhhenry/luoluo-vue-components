@@ -6,6 +6,6 @@ import MainView from './views/MainView.vue';
 
 <template>
   <ElConfigProvider :locale="zhCn">
-    <MainView/>
+    <MainView />
   </ElConfigProvider>
 </template>
