@@ -4,9 +4,6 @@
   "license": "MIT",
   "scripts": {
     "dev": "vite",
-    "build": "run-s type-check build-only",
-    "preview": "vite preview",
-    "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
     "format": "prettier --write src/"
@@ -40,10 +37,9 @@
     "prettier": "^2.8.8",
     "typescript": "~5.1.6",
     "vite": "^4.4.9",
+    "vite-plugin-dts": "^3.5.1",
     "vue-tsc": "^1.8.8"
   },
   "packageManager": "pnpm@8.6.12",
-  "exports": {
-    ".": "./index.ts"
-  }
+  "main": "index.ts"
 }
