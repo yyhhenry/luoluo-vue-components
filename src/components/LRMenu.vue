@@ -11,7 +11,7 @@ defineSlots<{
       <div class="lr-item">
         <slot></slot>
       </div>
-      <div class="lr-item" style="margin-left: 40px">
+      <div class="lr-item" :style="{ marginLeft: '20px' }">
         <slot name="end"></slot>
       </div>
     </div>
