@@ -1,80 +1,65 @@
 <script setup lang="ts">
-import { ElContainer, ElAside, ElHeader } from 'element-plus';
-import PlainMain from './page-layout/PlainMain.vue';
+import { ElContainer, ElAside, ElHeader, ElDrawer, ElButton, ElMain, ElSpace } from 'element-plus';
 import { useWindowSize } from '@vueuse/core';
-import { computed, ref, watchEffect } from 'vue';
+import { computed, ref } from 'vue';
+import LRMenu from './LRMenu.vue';
+import { MoreFilled } from '@element-plus/icons-vue';
+defineProps<{
+  asideWidth?: string;
+}>();
 const slots = defineSlots<{
   default: (_: {}) => unknown;
   header: (_: {}) => unknown;
+  'header-extra'?: (_: {}) => unknown;
   aside?: (_: {}) => unknown;
 }>();
-const { width } = useWindowSize();
-const isMobile = computed(() => width.value < 700);
+const windowSize = useWindowSize();
+const xs = computed(() => windowSize.width.value < 768);
 const showAside = ref(true);
-watchEffect(() => {
-  if (!isMobile.value) {
-    showAside.value = true;
-  }
-});
-const onTouchMain = () => {
-  if (isMobile.value) {
-    showAside.value = false;
-  }
-};
-const onTouchHeader = () => {
-  if (isMobile.value) {
-    showAside.value = true;
-  }
-};
 </script>
 <template>
-  <ElContainer class="full-viewport">
-    <ElHeader @click="onTouchHeader()" @touch="onTouchHeader()" class="root-header">
-      <slot name="header"></slot>
+  <ElContainer :style="{ height: '100vh' }">
+    <ElHeader class="header">
+      <LRMenu>
+        <ElSpace>
+          <ElButton
+            circle
+            :type="'primary'"
+            plain
+            :icon="MoreFilled"
+            v-if="xs"
+            @click="showAside = true"
+          ></ElButton>
+          <slot name="header"></slot>
+        </ElSpace>
+        <template #end v-if="slots['header-extra']">
+          <slot name="header-extra"></slot>
+        </template>
+      </LRMenu>
     </ElHeader>
-    <PlainMain>
-      <ElContainer class="full-height">
-        <Transition name="slide-fade">
-          <ElAside
-            :width="'250px'"
-            class="aside"
-            v-if="slots.aside && showAside"
-            :style="{ marginRight: isMobile ? `-250px` : undefined }"
-          >
-            <slot name="aside"></slot>
-          </ElAside>
-        </Transition>
-        <PlainMain @click="onTouchMain()" @touch="onTouchMain()">
+    <ElMain :style="{ padding: '0px' }">
+      <ElContainer :style="{ height: '100%' }">
+        <ElAside :width="asideWidth" class="aside" v-if="slots.aside && !xs">
+          <slot name="aside"></slot>
+        </ElAside>
+        <ElDrawer :with-header="false" :size="'60%'" append-to-body :direction="'ltr'" v-model="showAside" v-else>
+          <slot name="aside"></slot>
+        </ElDrawer>
+        <ElMain :style="{ padding: '0px' }">
           <slot></slot>
-        </PlainMain>
+        </ElMain>
       </ElContainer>
-    </PlainMain>
+    </ElMain>
   </ElContainer>
 </template>
 <style scoped>
-.full-viewport {
-  height: 100vh;
-}
-.full-height {
-  height: 100%;
-}
-.root-header {
+.header {
   background-color: var(--el-bg-color-page);
+  border-bottom: 2px solid var(--el-border-color);
 }
 .aside {
   z-index: 20;
   background-color: var(--el-bg-color-page);
   border-right: 1px solid var(--el-border-color);
-}
-
-.slide-fade-enter-active,
-.slide-fade-leave-active {
-  transition: transform 0.3s ease-out, opacity 0.3s ease-out;
-}
-
-.slide-fade-enter-from,
-.slide-fade-leave-to {
-  transform: translateX(-250px);
-  opacity: 0;
 }
 </style>

@@ -17,9 +17,3 @@ const { store: colorMode } = useColorMode();
     </ElRadioButton>
   </ElRadioGroup>
 </template>
-<style scoped>
-.switch-dark {
-  --el-switch-on-color: var(--el-bg-color);
-  --el-switch-off-color: var(--el-color-info);
-}
-</style>
