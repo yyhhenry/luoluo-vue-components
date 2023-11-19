@@ -5,9 +5,14 @@
   "description": "`luoluo` components, provide a simple encapsulation of ElementPlus, used to reduce duplicate code in the `yyhhenry` series projects.",
   "license": "MIT",
   "exports": {
-    ".": "./lib/lib.js"
+    ".": {
+      "import": "./dist/lib.js",
+      "types": "./lib.ts"
+    }
   },
-  "types": "./lib.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "vite build -c lib.config.ts",
