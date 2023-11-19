@@ -4,7 +4,7 @@
   "version": "0.0.4",
   "description": "`luoluo` components, provide a simple encapsulation of ElementPlus, used to reduce duplicate code in the `yyhhenry` series projects.",
   "license": "MIT",
-  "exports":{
+  "exports": {
     ".": "./lib/lib.js"
   },
   "types": "./lib.ts",
@@ -19,8 +19,7 @@
     "@element-plus/icons-vue": "^2.1.0",
     "@vueuse/core": "^10.6.1",
     "element-plus": "^2.4.2",
-    "vue": "^3.3.8",
-    "vue-router": "^4.2.5"
+    "vue": "^3.3.8"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.5.1",

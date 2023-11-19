@@ -19,7 +19,7 @@ export default defineConfig({
       fileName: 'lib',
     },
     rollupOptions: {
-      external: ['vue', 'element-plus'],
+      external: ['vue', 'element-plus', '@vueuse/core', '@element-plus/icons-vue'],
     },
   },
 });
