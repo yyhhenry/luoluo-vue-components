@@ -4,12 +4,8 @@
   "version": "0.0.4",
   "description": "A simple encapsulation of ElementPlus",
   "license": "MIT",
-  "exports": {
-    ".": {
-      "import": "./dist/lib.js",
-      "types": "./lib.ts"
-    }
-  },
+  "exports": "./dist/lib.js",
+  "types": "./lib.ts",
   "files": [
     "dist"
   ],
