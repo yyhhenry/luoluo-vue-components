@@ -1,12 +1,13 @@
 {
   "name": "luoluo-vue-components",
   "type": "module",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A simple encapsulation of ElementPlus",
   "license": "MIT",
   "exports": {
     ".": {
       "import": "./lib.ts",
+      "require": "./lib.ts",
       "types": "./lib.ts"
     }
   },
