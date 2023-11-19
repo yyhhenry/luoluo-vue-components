@@ -2,7 +2,7 @@
   "name": "luoluo-vue-components",
   "type": "module",
   "version": "0.0.4",
-  "description": "`luoluo` components, provide a simple encapsulation of ElementPlus, used to reduce duplicate code in the `yyhhenry` series projects.",
+  "description": "A simple encapsulation of ElementPlus",
   "license": "MIT",
   "exports": {
     ".": {
