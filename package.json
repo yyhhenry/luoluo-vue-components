@@ -1,24 +1,16 @@
 {
   "name": "luoluo-vue-components",
   "type": "module",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A simple encapsulation of ElementPlus",
   "license": "MIT",
   "exports": {
-    ".": {
-      "import": "./dist/lib.js",
-      "types": "./lib.ts"
-    },
+    ".": "./lib.ts",
     "./css": "./dist/style.css"
   },
-  "files": [
-    "dist",
-    "lib.ts",
-    "src"
-  ],
+  "types": "./lib.ts",
   "scripts": {
     "dev": "vite",
-    "build": "vite build -c lib.config.ts",
     "type-check": "vue-tsc --noEmit -p tsconfig.app.json --composite false",
     "lint": "eslint . --fix --ignore-path .gitignore",
     "format": "prettier --write ."
