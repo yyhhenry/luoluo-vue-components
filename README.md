@@ -4,8 +4,4 @@ It provides a simple encapsulation of ElementPlus. It can be used to reduce dupl
 
 You need to make sure that your project contains the following dependencies: 'vue', 'element-plus', '@vueuse/core', '@element-plus/icons-vue'.
 
-Remember to import the style file like this:
-
-```ts
-import 'luoluo-vue-components/css';
-```
+You need to make sure you are using typescript.
