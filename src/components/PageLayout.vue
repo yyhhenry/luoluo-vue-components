@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { ElContainer, ElAside, ElHeader, ElDrawer, ElButton, ElMain, ElSpace } from 'element-plus';
+import {
+  ElContainer,
+  ElAside,
+  ElHeader,
+  ElDrawer,
+  ElButton,
+  ElMain,
+  ElSpace,
+} from 'element-plus';
 import { useWindowSize } from '@vueuse/core';
 import { computed, ref } from 'vue';
 import LRMenu from './LRMenu.vue';
@@ -8,10 +16,10 @@ defineProps<{
   asideWidth?: string;
 }>();
 const slots = defineSlots<{
-  default: (_: {}) => unknown;
-  header: (_: {}) => unknown;
-  'header-extra'?: (_: {}) => unknown;
-  aside?: (_: {}) => unknown;
+  default: (_: unknown) => unknown;
+  header: (_: unknown) => unknown;
+  'header-extra'?: (_: unknown) => unknown;
+  aside?: (_: unknown) => unknown;
 }>();
 const windowSize = useWindowSize();
 const xs = computed(() => windowSize.width.value < 768);

@@ -5,8 +5,8 @@ defineProps<{
   tight?: boolean;
 }>();
 const slots = defineSlots<{
-  default: (_: {}) => unknown;
-  header?: (_: {}) => unknown;
+  default: (_: unknown) => unknown;
+  header?: (_: unknown) => unknown;
 }>();
 </script>
 <template>
