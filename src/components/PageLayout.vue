@@ -8,10 +8,10 @@ defineProps<{
   asideWidth?: string;
 }>();
 const slots = defineSlots<{
-  default: (_: {}) => unknown;
-  header: (_: {}) => unknown;
-  'header-extra'?: (_: {}) => unknown;
-  aside?: (_: {}) => unknown;
+  default: (_: unknown) => unknown;
+  header: (_: unknown) => unknown;
+  'header-extra'?: (_: unknown) => unknown;
+  aside?: (_: unknown) => unknown;
 }>();
 const windowSize = useWindowSize();
 const xs = computed(() => windowSize.width.value < 768);
