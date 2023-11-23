@@ -1,5 +1,13 @@
 <script setup lang="ts">
-import { ElContainer, ElAside, ElHeader, ElDrawer, ElButton, ElMain, ElSpace } from 'element-plus';
+import {
+  ElContainer,
+  ElAside,
+  ElHeader,
+  ElDrawer,
+  ElButton,
+  ElMain,
+  ElSpace,
+} from 'element-plus';
 import { useWindowSize } from '@vueuse/core';
 import { computed, ref } from 'vue';
 import LRMenu from './LRMenu.vue';
